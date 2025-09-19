@@ -87,12 +87,32 @@ Built with modern tooling optimized for Bun.js:
 - **Bun 1.1.30+** (recommended) or Node.js 18+
 - **Git 2.40+** for submodule support
 
-### Quick Start (Manual Submodule Setup)
+### Quick Start
+
+```bash
+# Clone the repository with submodules zero folder
+git clone --recurse-submodules https://github.com/ui8kit/create-app.git .
+
+# Or clone the repository with submodules into ui8kit-app/ folder
+git clone --recurse-submodules https://github.com/ui8kit/create-app.git ui8kit-app
+cd ui8kit-app
+
+# If you forgot --recurse-submodules, initialize submodules manually
+git submodule update --init --recursive
+
+# Install dependencies
+bun install
+
+# Start development server
+bun run dev:web
+```
+
+### Alternative Installation (Manual Submodule Setup)
 
 ```bash
 # Clone the repository
-git clone https://github.com/ui8kit/create-app.git
-cd ui8kit-starter
+git clone https://github.com/ui8kit/create-app.git ui8kit-app
+cd ui8kit-app
 
 # Add UI8Kit Core submodule
 git submodule add https://github.com/ui8kit/core.git packages/@ui8kit/core
@@ -274,8 +294,8 @@ We welcome contributions! Here's how to get started:
 
 ```bash
 # Fork and clone the repository
-git clone --recurse-submodules https://github.com/YOUR_USERNAME/ui8kit-starter.git
-cd ui8kit-starter
+git clone --recurse-submodules https://github.com/YOUR_USERNAME/ui8kit-app.git
+cd ui8kit-app
 
 # Install dependencies
 bun install
