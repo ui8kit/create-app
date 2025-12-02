@@ -1,5 +1,22 @@
 import { Block, Container, Button, Title, Text, Stack } from '@ui8kit/core'
-import { ThemeProvider, useTheme, lesseUITheme } from '@ui8kit/core' // skyOSTheme, modernUITheme, lesseUITheme
+import { ThemeProvider, useTheme } from '@/providers/theme' // skyOSTheme, modernUITheme, lesseUITheme
+
+// LesseUI Theme
+export const lesseUITheme = {
+  name: "LesseUI",
+  rounded: {
+    // none | default | sm | md | lg | xl | "2xl" | "3xl" | full
+    default: "sm" as const,
+    button: "md" as const,
+    badge: "xl" as const
+  },
+  buttonSize: {
+    // xs | sm | default | md | lg | xl | icon
+    default: "sm" as const,
+    badge: "sm" as const
+  },
+  isNavFixed: true
+} as const;
 
 function AppContent() {
   const { toggleDarkMode, isDarkMode } = useTheme()
